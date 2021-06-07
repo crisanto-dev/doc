@@ -1,0 +1,178 @@
+/* COLOR MODE */
+:root {
+  --color: #243746;
+  --color-primary: #158876;
+  --color-secondary: #0e2233;
+  --bg: #f3f5f4;
+  --bg-secondary: #fff;
+  --border-color: #ddd;
+}
+
+.dark-mode {
+  --color: #ebf4f1;
+  --color-primary: #41b38a;
+  --color-secondary: #fdf9f3;
+  --bg: #091a28;
+  --bg-secondary: #071521;
+  --border-color: #0d2538;
+}
+.sepia-mode {
+  --color: #433422;
+  --color-secondary: #504231;
+  --bg: #f1e7d0;
+  --bg-secondary: #eae0c9;
+  --border-color: #ded0bf;
+}
+
+.nuxt-content-highlight {
+  @apply rounded-lg !important;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg);
+  color: var(--color);
+  transition: background-color .3s;
+}
+a {
+  color: var(--color-primary)
+}
+
+
+/* GLOBAL */
+.container {
+  @apply lg:px-40;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+h1 {
+  @apply text-5xl;
+  @apply pb-6;
+}
+h2 {
+  @apply text-4xl;
+  @apply pb-6;
+}
+h3 {
+  @apply text-3xl;
+  @apply pb-4;
+}
+h4 {
+  @apply text-2xl;
+  @apply pb-4;
+}
+h5 {
+  @apply text-xl;
+  @apply pb-3;
+}
+h6 {
+  @apply text-lg;
+  @apply pb-2;
+}
+p {
+  @apply pb-4;
+}
+
+/* NAVBAR */
+
+.navbar {
+
+  /* @apply bg-gradient-to-r; */
+  @apply border-b;
+}
+
+.navbar-content {
+  @apply w-full;
+  @apply flex;
+  @apply items-center;
+  @apply justify-between;
+}
+.navbar-content .center{
+  @apply lg:w-2/4;
+}
+
+.navbar .menu {
+
+}
+.navbar .menu ul {
+  @apply flex;
+}
+/* CONTENT */
+.content {
+  @apply my-12;
+}
+/* FOOTER */
+
+.footer {
+  @apply bg-gradient-to-r;
+  @apply from-gray-100;
+  @apply to-gray-300;
+  @apply pt-20;
+  @apply pb-12;
+  @apply border-b;
+}
+
+/* PREV NEXT LINK */
+
+.prev-next {
+  @apply text-center;
+  @apply my-12;
+  @apply border;
+  @apply flex;
+}
+.prev-next .prev a, .prev-next .next a{
+  @apply px-3;
+  @apply py-2;
+  
+  @apply hover:opacity-80;
+  @apply block;
+}
+.prev-next .prev, .prev-next .next {
+  @apply w-1/2;
+}
+
+.prev-next .prev {
+  @apply hover:opacity-80;
+}
+.prev-next .next {
+
+}
+
+/* SEARCH  */
+.search { 
+  @apply my-2;
+  @apply mx-3;
+}
+.search input {
+  @apply px-3;
+  @apply py-2;
+  @apply shadow-inner;
+  @apply w-full;
+  @apply bg-gray-100;
+  @apply rounded;
+  @apply focus:ring-2;
+  @apply focus:ring-gray-300;
+  @apply focus:outline-none;
+}
+
+/* BLOG */
+
+.blog {
+  @apply flex;
+}
+
+.blog .bode-blog {
+  @apply w-full;
+  @apply lg:w-2/4;
+}
+
+.blog .sidebar-blog {
+  @apply w-full;
+  @apply w-1/4;
+}
+
+.blog .body-blog {
+  @apply p-3;
+}
