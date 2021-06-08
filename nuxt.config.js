@@ -50,6 +50,7 @@ export default {
         theme: 'prism-themes/themes/prism-vsc-dark-plus.css'
       }
     }
+    // dir: '@/content/*.md'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
