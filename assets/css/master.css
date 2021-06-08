@@ -3,7 +3,8 @@
   --color: #243746;
   --color-primary: #158876;
   --color-secondary: #0e2233;
-  --bg: #f3f5f4;
+  /* --bg: #f3f5f4; */
+  --bg: #ffffff;
   --bg-secondary: #fff;
   --border-color: #ddd;
 }
@@ -24,9 +25,7 @@
   --border-color: #ded0bf;
 }
 
-.nuxt-content-highlight {
-  @apply rounded-lg !important;
-}
+
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -42,6 +41,8 @@ a {
 /* GLOBAL */
 .container {
   @apply lg:px-40;
+  @apply sm:mx-auto;
+  @apply overflow-hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,7 +79,7 @@ p {
 /* NAVBAR */
 
 .navbar {
-
+  @apply px-3;
   /* @apply bg-gradient-to-r; */
   @apply border-b;
 }
@@ -90,15 +91,35 @@ p {
   @apply justify-between;
 }
 .navbar-content .center{
-  @apply lg:w-2/4;
+  /* @apply lg:w-2/4; */
+  @apply w-full;
+  @apply flex-initial;
+  @apply hidden;
+  @apply lg:block;
 }
 
-.navbar .menu {
-
+.navbar-content .menu {
+  @apply flex-initial;
+}
+.navbar-content .brand {
+  @apply flex-initial;
+  @apply mr-14;
+  @apply pr-16;
 }
 .navbar .menu ul {
   @apply flex;
 }
+
+.navbar .menu ul li {
+  @apply mx-2;
+}
+
+.navbar .menu ul li a {
+  @apply block;
+  @apply px-3; 
+  @apply py-2;
+}
+
 /* CONTENT */
 .content {
   @apply my-12;
@@ -107,11 +128,38 @@ p {
 
 .footer {
   @apply bg-gradient-to-r;
-  @apply from-gray-100;
-  @apply to-gray-300;
+  @apply from-gray-800;
+  @apply via-gray-900;
+  @apply to-black;
   @apply pt-20;
   @apply pb-12;
   @apply border-b;
+  @apply text-white;
+  @apply px-3;
+}
+
+/* SOCIAL */
+.social {
+  @apply mb-12;
+  /* @apply flex; */
+
+}
+
+.social ul {
+  /* @apply mx-auto; */
+  @apply flex;
+  @apply flex-wrap;
+  @apply justify-center;
+}
+
+.social ul li a{
+  @apply block;
+  @apply px-3;
+  @apply py-2;
+  @apply m-1;
+}
+.social ul li a{
+  @apply hover:text-white;
 }
 
 /* PREV NEXT LINK */
@@ -121,6 +169,8 @@ p {
   @apply my-12;
   @apply border;
   @apply flex;
+  @apply -mx-14;
+  @apply md:mx-0;
 }
 .prev-next .prev a, .prev-next .next a{
   @apply px-3;
@@ -135,6 +185,7 @@ p {
 
 .prev-next .prev {
   @apply hover:opacity-80;
+  @apply border-r;
 }
 .prev-next .next {
 
@@ -175,4 +226,25 @@ p {
 
 .blog .body-blog {
   @apply p-3;
+}
+
+/* MARKDOWN */
+.nuxt-content-highlight {
+  @apply -mx-16;
+  @apply px-16;
+  @apply py-12;
+  @apply bg-gradient-to-r;
+  @apply from-blue-600;
+  @apply via-indigo-700;
+  @apply to-purple-700;
+  @apply sm:-mx-6;
+  @apply sm:px-6;
+  @apply rounded-lg;
+  @apply md:mx-0;
+  @apply md:px-0;
+  @apply md:py-0;
+}
+
+pre[class*="language-"] {
+  @apply rounded-lg !important;
 }

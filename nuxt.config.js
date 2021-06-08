@@ -1,3 +1,17 @@
+// Configuration: https://content.nuxtjs.org/integrations#nuxtjssitemap
+const createSitemapRoutes = async () => {
+  let routes = []
+  let posts = null
+  const { $content } = require('@nuxt/content')
+  if (posts === null || posts.length === 0)
+    posts = await $content({ deep: true }).only(['slug']).fetch()
+    posts.map(file => file.path === '/index' ? '/' : file.path)
+  for (const post of posts) {
+    routes.push(`${post.slug}`)
+  }
+  return routes
+}
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -38,13 +52,25 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxtjs/fontawesome'
   ],
+
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      brands: ['faFacebook', 'faInstagram'],
+      solid: ['faArrowRight', 'faArrowLeft']
+      // regular: ['faMoon','faSun']
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+
+    '@nuxtjs/sitemap' // always push in the end of array
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -79,6 +105,13 @@ export default {
     classPrefix: '',
     classSuffix: '-mode',
     storageKey: 'nuxt-color-mode'
+  },
+
+  // Build configuration: https://content.nuxtjs.org/integrations#nuxtjssitemap
+  sitemap: {
+    hostname: 'http://localhost:3000/',
+    gzip: true,
+    routes: createSitemapRoutes
   }
 
 }

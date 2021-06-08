@@ -1,13 +1,23 @@
 <template>
   <div class="prev-next">
     <div class="prev">
-      <nuxt-link v-if="(prev != null)" :to="prev.path">
-         {{ prev.title }}
+      <nuxt-link 
+        v-if="(prev != null)" 
+        :to="prev.path"
+        :alt="prev.title">
+        <fa icon="arrow-left"  />
+         {{ delimite(prev.title) }}
       </nuxt-link>
     </div>
     <div class="next">
-      <nuxt-link v-if="(next != null)" :to="next.path">
-        {{ next.title }} 
+      <nuxt-link 
+        v-if="(next != null)" 
+        :to="next.path"
+        :alt="next.title">
+        <!-- <fa-layers class="fa-2x"> -->
+        <!-- </fa-layers> -->
+        {{ delimite(next.title) }} 
+        <fa icon="arrow-right"  />
       </nuxt-link>
     </div>
   </div>
@@ -26,7 +36,11 @@ export default {
       required: false,
       default: null
     }
+  },
+  methods: {
+    delimite(str) {
+      return str.substring(0, 25) + "..."
+    }
   }
-
 }
 </script>
