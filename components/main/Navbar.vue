@@ -10,6 +10,18 @@
         <div class="center">
           <MainSearch />
         </div>
+        <div class="burger">
+          <div 
+            class=""
+            @click="burger = !burger">
+            <fa
+              v-if="!burger"
+              icon="bars"></fa>
+            <fa
+            v-else
+            icon="times"></fa>
+          </div>
+        </div>
         <div class="menu">
           <ul>
             <li>
@@ -27,6 +39,10 @@
 
 <script>
 export default {
-  
+  data () {
+    return {
+      burger: false
+    }
+  }
 }
 </script>

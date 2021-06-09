@@ -60,7 +60,10 @@ export default {
     component: 'fa',
     icons: {
       brands: ['faFacebook', 'faInstagram'],
-      solid: ['faArrowRight', 'faArrowLeft']
+      solid: [
+        'faArrowRight', 'faArrowLeft', 'faNewspaper', 'faMedal', 'faAddressBook',
+        'faChalkboard', 'faBars', 'faTimes'
+      ]
       // regular: ['faMoon','faSun']
     }
   },
