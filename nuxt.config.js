@@ -33,7 +33,6 @@ export default {
   },
 
   router: {
-    base: '/doc/'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -97,7 +96,7 @@ export default {
       return files.map(file => file.path === '/index' ? '/' : file.path)
     }
   },
-  
+
   // Build Configuration: https://color-mode.nuxtjs.org/#configuration
   colorMode: {
     preference: 'system', // default value of $colorMode.preference
