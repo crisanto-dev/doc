@@ -33,6 +33,14 @@
           </ul>
         </div>
       </div>
+      <div class="menu-mobil" :class="burger ? `active`:``">
+        <MainSearch />
+        <ul>
+          <li>
+            <nuxt-link to="/">Home</nuxt-link>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
