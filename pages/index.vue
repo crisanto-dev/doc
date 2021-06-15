@@ -1,5 +1,9 @@
 <template>
-  <div class="container">
+  <div>
+    <MainProfile />
+    <section>
+      <SectionBlogs :blogs="blogs"></SectionBlogs>
+    </section>
     <div>
       <Logo />
       <h1 class="title">
@@ -28,7 +32,20 @@
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData({$content}) {
+    const blogs = await $content('blog').only(['title', 'description', 'path', 'createdAt'])
+      .sortBy('createdAt', 'asc')
+      .limit(6)
+      .fetch()
+      .catch(err => {
+        error({ statusCode: 404, message: 'Page not found' })
+      })
+    return {
+      blogs
+    }
+  },
+}
 </script>
 
 <style>
