@@ -1,0 +1,19 @@
+/* DARK AND LIGHT */
+
+body, .navbar, .footer, .menu-mobil, .card, .profile-card, .profile, .profile-background{
+  @apply bg-white;
+  @apply dark:bg-gray-900;
+  @apply dark:text-gray-200;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-black;
+  @apply dark:text-gray-200;
+}
+
+/* VARIANTS */
+
+.profile-background {
+  @apply bg-gray-100;
+  @apply dark:bg-gray-800;
+}

@@ -38,7 +38,9 @@
           </div>
         </div>
       </div>
+      
     </div>
+    <MainFooterBar />
   </div>
 </template>
 

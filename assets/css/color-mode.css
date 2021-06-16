@@ -1,0 +1,4 @@
+.color-mode {
+  @apply text-gray-900;
+  @apply dark:text-gray-200;
+}

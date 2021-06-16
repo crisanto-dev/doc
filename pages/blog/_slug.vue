@@ -27,7 +27,7 @@ export default {
       next
     }
   },
-  colorMode: 'light',
+  // colorMode: 'light',
   layout: 'blog',
   methods: {
     getBlog() {
@@ -35,7 +35,7 @@ export default {
     }
   },
   mounted() {
-    this.$colorMode.preference = 'dark'
+    // this.$colorMode.preference = 'dark'
     
   },
   methods: {

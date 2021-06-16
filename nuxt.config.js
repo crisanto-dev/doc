@@ -55,13 +55,20 @@ export default {
     '@nuxtjs/fontawesome'
   ],
 
+  // Tailwindcss build: 
+  tailwindcss: {
+    jit: true,
+    // add '~tailwind.config` alias
+    exposeConfig: true
+  },
+
   fontawesome: {
     component: 'fa',
     icons: {
       brands: ['faFacebook', 'faInstagram'],
       solid: [
         'faArrowRight', 'faArrowLeft', 'faNewspaper', 'faMedal', 'faAddressBook',
-        'faChalkboard', 'faBars', 'faTimes'
+        'faChalkboard', 'faBars', 'faTimes', 'faMoon', 'faSun'
       ]
       // regular: ['faMoon','faSun']
     }
@@ -104,8 +111,8 @@ export default {
     hid: 'nuxt-color-mode-script',
     globalName: '__NUXT_COLOR_MODE__',
     componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '-mode',
+    // classPrefix: '',
+    classSuffix: '',
     storageKey: 'nuxt-color-mode'
   },
 
