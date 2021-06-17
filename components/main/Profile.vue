@@ -4,9 +4,9 @@
     <div class="profile-content">
       <div class="profile-panel">
         <div class="panel">
-          <h1>{{ name }}</h1>
+          <h1 class="title">{{ name }}</h1>
           <br>
-          <br>
+          <h2 class="title">Projects</h2>
           <div class="projects">
             <slot />
           </div>

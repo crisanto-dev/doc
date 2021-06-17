@@ -3,12 +3,14 @@
     <fa-layers 
       class="fa-2x"
       @click="toggleColorMode()">
-      <fa 
-        v-if="darkMode"
-        :icon="['fas', `moon`]"  />
-      <fa 
-        v-else
-        :icon="['fas', `sun`]"  />
+      <client-only>
+        <fa 
+          v-if="darkMode"
+          :icon="['fas', `moon`]"  />
+        <fa 
+          v-else
+          :icon="['fas', `sun`]"  />
+      </client-only>
     </fa-layers>
   </div>
 </template>

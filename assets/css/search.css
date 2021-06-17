@@ -1,0 +1,23 @@
+.search {
+  @apply relative;
+}
+.search-items {
+  @apply absolute;
+  @apply left-0;
+  @apply right-0;
+  @apply p-3;
+  @apply mt-3;
+  @apply shadow;
+  @apply rounded;
+  @apply z-40;
+  @apply bg-white;
+  @apply dark:bg-gray-900;
+}
+
+.search .items .item a{
+  @apply block;
+  @apply rounded;
+  @apply p-3;
+  @apply shadow;
+  @apply my-1;
+}

@@ -18,11 +18,17 @@ body, .navbar, .footer, .menu-mobil, .card, .profile-card, .profile, .profile-ba
   @apply dark:bg-gray-800;
 }
 
+.nuxt-content-highlight {
+  @apply md:bg-transparent;
+}
+
 h1, h2, h3, h4, h5, h6 {
   @apply text-black;
   @apply dark:text-gray-200;
 }
-
+pre[class*="language-"] {
+  @apply dark:bg-gray-800;
+}
 /* Border */
 .footer, .footer-bar {
   @apply border-t;

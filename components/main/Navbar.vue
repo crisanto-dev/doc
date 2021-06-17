@@ -4,7 +4,7 @@
       <div class="navbar-content">
         <div class="brand">
           <nuxt-link to="/">
-            Doc
+            crisanto.dev
           </nuxt-link>
         </div>
         <div class="center">

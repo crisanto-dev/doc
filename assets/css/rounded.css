@@ -1,0 +1,15 @@
+.search input,
+.profile-card,
+.card
+{
+  @apply rounded-sm;
+}
+.profile-card {
+  /* @apply rounded; */
+}
+.nuxt-content-highlight,
+pre[class*="language-"]
+{
+  @apply rounded;
+}
+

@@ -1,5 +1,6 @@
 @import url('@/assets/css/background.css');
 @import url('@/assets/css/tag.css');
+@import url('@/assets/css/rounded.css');
 /* COLOR MODE */
 :root {
   --color: #243746;
@@ -43,7 +44,7 @@ a {
 .container {
   @apply lg:px-40;
   @apply sm:mx-auto;
-  @apply overflow-hidden;
+  /* @apply overflow-hidden; */
   /* @apply relative; */
 }
 
@@ -51,27 +52,33 @@ h1, h2, h3, h4, h5, h6 {
   @apply font-bold;
 }
 h1 {
-  @apply text-5xl;
+  @apply text-4xl;
+  @apply lg:text-3xl;
   @apply pb-6;
 }
 h2 {
-  @apply text-4xl;
+  @apply text-3xl;
+  @apply lg:text-2xl;
   @apply pb-6;
 }
 h3 {
-  @apply text-3xl;
+  @apply text-2xl;
+  @apply lg:text-xl;
   @apply pb-4;
 }
 h4 {
-  @apply text-2xl;
+  @apply text-xl;
+  @apply lg:text-lg;
   @apply pb-4;
 }
 h5 {
-  @apply text-xl;
+  @apply text-lg;
+  @apply lg:text-base;
   @apply pb-3;
 }
 h6 {
-  @apply text-lg;
+  @apply text-base;
+  @apply lg:text-sm;
   @apply pb-2;
 }
 p {
@@ -139,7 +146,7 @@ p {
   @apply left-0;
   @apply right-0;
   @apply top-20;
-  @apply -mt-2;
+  @apply -mt-6;
   @apply bottom-0;
   @apply z-30;
   @apply lg:top-24;
@@ -153,6 +160,7 @@ p {
 .content {
   @apply mt-24;
   @apply mb-12;
+  @apply overflow-hidden;
 }
 /* FOOTER */
 
@@ -218,6 +226,7 @@ p {
   @apply flex;
   @apply -mx-14;
   @apply md:mx-0;
+  @apply dark:border-gray-700;
 }
 .prev-next .prev a, .prev-next .next a{
   @apply px-3;
@@ -225,6 +234,7 @@ p {
   
   @apply hover:opacity-80;
   @apply block;
+  @apply dark:bg-gray-800;
 }
 .prev-next .prev, .prev-next .next {
   @apply w-1/2;
@@ -233,6 +243,7 @@ p {
 .prev-next .prev {
   @apply hover:opacity-80;
   @apply border-r;
+  @apply dark:border-gray-700;
 }
 .prev-next .next {
 
@@ -249,7 +260,6 @@ p {
   @apply shadow-inner;
   @apply w-full;
   @apply bg-gray-100;
-  @apply rounded;
   @apply focus:ring-2;
   @apply focus:ring-gray-300;
   @apply focus:outline-none;
@@ -286,16 +296,10 @@ p {
   @apply to-purple-700;
   @apply sm:-mx-6;
   @apply sm:px-6;
-  @apply rounded-lg;
   @apply md:mx-0;
   @apply md:px-0;
   @apply md:py-0;
 }
-
-pre[class*="language-"] {
-  @apply rounded-lg !important;
-}
-
 
 /* SECTIONS */
 .section {
@@ -330,15 +334,15 @@ pre[class*="language-"] {
 .card {
   @apply p-3;
   @apply m-3;
-  @apply rounded-lg;
   @apply shadow;
 }
 
 .profile-card {
-  @apply p-6;
+  /* @apply p-6; */
+  @apply py-6;
+  @apply px-4;
   @apply w-full;
   @apply shadow;
-  @apply rounded;
   @apply mb-12;
 }
 /* PROFILE */
@@ -359,7 +363,9 @@ pre[class*="language-"] {
 }
 
 .profile-content {
-  @apply py-24;
+  @apply pt-12;
+  @apply pb-24;
+
   @apply flex;
   @apply flex-wrap;
   @apply relative;
@@ -373,6 +379,7 @@ pre[class*="language-"] {
   @apply md:w-8/12;
   @apply order-2;
   @apply lg:order-1;
+  /* @apply lg:px-; */
 }
 .profile-sidebar {
   @apply w-full;
@@ -380,7 +387,11 @@ pre[class*="language-"] {
   @apply order-1;
   @apply lg:order-2;
 }
-
+.profile-panel .panel .title {
+  @apply md:px-3;
+  @apply text-gray-700;
+  @apply dark:text-gray-200;
+}
 
 /* PROJECT */
 
@@ -393,4 +404,16 @@ pre[class*="language-"] {
   @apply w-full;
   @apply md:w-1/2;
   @apply lg:w-1/3;
+}
+
+
+/* COPY */
+
+button.copy {
+  @apply absolute;
+  @apply text-gray-200;
+  @apply right-0;
+  /* @apply top-0; */
+  @apply -mt-14;
+  @apply p-3;
 }
