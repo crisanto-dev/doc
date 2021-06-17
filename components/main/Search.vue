@@ -42,7 +42,7 @@ export default {
         return
       }
 
-      this.items = await this.$content('/', {deep:true})
+      this.items = await this.$content('', {deep:true})
         .only(['title', 'path'])
         .sortBy('createdAt', 'asc')
         .limit(12)

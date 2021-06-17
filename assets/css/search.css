@@ -1,6 +1,10 @@
 .search {
   @apply relative;
 }
+
+.search input{
+  @apply dark:text-gray-800;
+}
 .search-items {
   @apply absolute;
   @apply left-0;
@@ -11,7 +15,7 @@
   @apply rounded;
   @apply z-40;
   @apply bg-white;
-  @apply dark:bg-gray-900;
+  @apply dark:bg-gray-800;
 }
 
 .search .items .item a{
@@ -20,4 +24,5 @@
   @apply p-3;
   @apply shadow;
   @apply my-1;
+  @apply dark:bg-gray-900;
 }

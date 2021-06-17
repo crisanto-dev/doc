@@ -86,13 +86,13 @@ export default {
             {
               id: 'terms',
               title: 'Terms of Services',
-              path: 'tos',
+              path: '/tos',
               icon: null
             },
             {
               id: 'privacy',
               title: 'Privacy police',
-              path: 'privacy',
+              path: '/privacy',
               icon: null 
             }
           ]
