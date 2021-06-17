@@ -29,4 +29,4 @@ function reverseString($v) {
 }
 
 console.log(reverseString($variable));
-```
+\```

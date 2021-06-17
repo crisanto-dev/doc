@@ -5,6 +5,11 @@
       <div class="profile-panel">
         <div class="panel">
           <h1>{{ name }}</h1>
+          <br>
+          <br>
+          <div class="projects">
+            <slot />
+          </div>
         </div>
       </div>
       <div class="profile-sidebar">

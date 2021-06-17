@@ -1,0 +1,19 @@
+.tags {
+  /* @apply p-3; */
+  @apply -mx-1;
+}
+
+.tag-list {
+  @apply flex;
+  @apply flex-wrap;
+}
+
+.tag {
+  @apply m-1;
+  @apply px-3;
+  @apply py-1;
+  @apply rounded;
+  @apply shadow;
+  @apply bg-white;
+  @apply dark:bg-gray-700;
+}

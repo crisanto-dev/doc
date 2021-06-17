@@ -68,7 +68,7 @@ export default {
       brands: ['faFacebook', 'faInstagram'],
       solid: [
         'faArrowRight', 'faArrowLeft', 'faNewspaper', 'faMedal', 'faAddressBook',
-        'faChalkboard', 'faBars', 'faTimes', 'faMoon', 'faSun'
+        'faChalkboard', 'faBars', 'faTimes', 'faMoon', 'faSun', 'faClipboard', 'faClipboardCheck'
       ]
       // regular: ['faMoon','faSun']
     }

@@ -1,6 +1,13 @@
 <template>
   <div>
-    <MainProfile />
+    <MainProfile> 
+      <div
+        v-for="project in projects"
+        :key="project.path"
+        class="project">
+          <CardsProject :project="project"/>
+      </div>
+    </MainProfile>
     <section>
       <SectionBlogs :blogs="blogs"></SectionBlogs>
     </section>
@@ -35,14 +42,20 @@
 export default {
   async asyncData({$content}) {
     const blogs = await $content('blog').only(['title', 'description', 'path', 'createdAt'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .limit(6)
       .fetch()
       .catch(err => {
         error({ statusCode: 404, message: 'Page not found' })
       })
+    const projects = await $content('project')
+      .only(['title', 'description', 'path', 'createdAt', 'tags'])
+      .limit(6)
+      .sortBy('createdAt', 'desc')
+      .fetch()
     return {
-      blogs
+      blogs,
+      projects
     }
   },
 }

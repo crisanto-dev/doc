@@ -1,5 +1,5 @@
 @import url('@/assets/css/background.css');
-
+@import url('@/assets/css/tag.css');
 /* COLOR MODE */
 :root {
   --color: #243746;
@@ -85,7 +85,7 @@ p {
   /* @apply bg-gradient-to-r; */
   @apply border-b;
   @apply border-gray-200;
-  @apply dark:border-gray-700;
+  @apply dark:border-gray-800;
   @apply fixed;
   @apply w-full;
   @apply top-0;
@@ -163,7 +163,7 @@ p {
   /* @apply to-black; */
   @apply pt-20;
   /* @apply pb-12; */
-  @apply border-b;
+
   @apply text-white;
   @apply px-3;
 }
@@ -191,13 +191,9 @@ p {
 .social {
   @apply mb-6;
   @apply pb-6;
-  /* @apply flex; */
-  @apply border-b;
-  @apply border-gray-600;
 }
 
 .social ul {
-  /* @apply mx-auto; */
   @apply flex;
   @apply flex-wrap;
   @apply justify-center;
@@ -306,7 +302,6 @@ pre[class*="language-"] {
   @apply py-24;
   @apply shadow-inner;
   @apply my-6;
-  @apply bg-gray-100;
   @apply px-3;
   @apply md:px-12;
   @apply lg:px-24;
@@ -314,6 +309,7 @@ pre[class*="language-"] {
 }
 .section .title {
   @apply text-gray-700;
+  @apply dark:text-gray-300;
   @apply uppercase;
   @apply text-center;
   @apply pb-6;
@@ -349,7 +345,7 @@ pre[class*="language-"] {
 
 .profile {
   @apply -mt-6;
-  @apply mb-24;
+  /* @apply mb-24; */
   @apply relative;
   @apply shadow-inner;
 }
@@ -385,3 +381,16 @@ pre[class*="language-"] {
   @apply lg:order-2;
 }
 
+
+/* PROJECT */
+
+.projects {
+  @apply flex;
+  @apply flex-wrap;
+  @apply justify-between;
+}
+.projects .project {
+  @apply w-full;
+  @apply md:w-1/2;
+  @apply lg:w-1/3;
+}

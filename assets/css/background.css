@@ -1,14 +1,39 @@
 /* DARK AND LIGHT */
 
+
+/* Background */
+
 body, .navbar, .footer, .menu-mobil, .card, .profile-card, .profile, .profile-background{
   @apply bg-white;
   @apply dark:bg-gray-900;
   @apply dark:text-gray-200;
 }
 
+.profile {
+  @apply dark:bg-gray-900;
+}
+
+.section, .card-project {
+  @apply bg-gray-100;
+  @apply dark:bg-gray-800;
+}
+
 h1, h2, h3, h4, h5, h6 {
   @apply text-black;
   @apply dark:text-gray-200;
+}
+
+/* Border */
+.footer, .footer-bar {
+  @apply border-t;
+  @apply border-gray-200;
+  @apply dark:border-gray-800;
+}
+
+.social {
+  @apply border-b;
+  @apply border-gray-200;
+  @apply dark:border-gray-800;
 }
 
 /* VARIANTS */
