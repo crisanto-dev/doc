@@ -12,6 +12,12 @@
             :path="blog.path" />
       </div>
     </div>
+    <div class="section-footer">
+      <AppButton 
+        value="Ver todos" 
+        path="/blog" 
+        tag="a"/>
+    </div>
   </div>
 </template>
 <script>

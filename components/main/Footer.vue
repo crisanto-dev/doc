@@ -51,14 +51,9 @@ export default {
       options: [
         {
           id: 'options',
-          title: 'Company',
+          title: '',
           items: [
-            {
-              id: 'items-id',
-              title: 'Blog',
-              path: '/blog',
-              icon: 'newspaper'
-            },
+           
             {
               id: 'about',
               title: 'About',

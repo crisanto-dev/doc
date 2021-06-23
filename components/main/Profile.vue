@@ -4,19 +4,17 @@
     <div class="profile-content">
       <div class="profile-panel">
         <div class="panel">
-          <h1 class="title">{{ name }}</h1>
-          <br>
+          <div class="profile-image">
+            <figure class="image">
+              <img :src="image" :alt="name">
+            </figure>
+            <h1 class="title">{{ name }}</h1>
+          </div>
+          
           <h2 class="title">Projects</h2>
           <div class="projects">
             <slot />
           </div>
-        </div>
-      </div>
-      <div class="profile-sidebar">
-        <div class="profile-card">
-          <figure>
-            <img :src="image" :alt="name">
-          </figure>
         </div>
       </div>
     </div>

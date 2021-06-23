@@ -11,30 +11,9 @@
     <section>
       <SectionBlogs :blogs="blogs"></SectionBlogs>
     </section>
-    <div>
-      <Logo />
-      <h1 class="title">
-        doc
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <section>
+      <SectionCoaching :coachs="coachs"></SectionCoaching>
+    </section>
   </div>
 </template>
 
@@ -53,9 +32,15 @@ export default {
       .limit(6)
       .sortBy('createdAt', 'desc')
       .fetch()
+    
+    const coachs = await $content('coaching', {deep: true}).only(['title', 'path', 'description'])
+      .sortBy('createdAt', 'desc')
+      .limit(6)
+      .fetch()
     return {
       blogs,
-      projects
+      projects,
+      coachs
     }
   },
 }

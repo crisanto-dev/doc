@@ -4,10 +4,10 @@ const createSitemapRoutes = async () => {
   let posts = null
   const { $content } = require('@nuxt/content')
   if (posts === null || posts.length === 0)
-    posts = await $content({ deep: true }).only(['slug']).fetch()
+    posts = await $content("",{ deep: true }).only(['path']).fetch()
     posts.map(file => file.path === '/index' ? '/' : file.path)
   for (const post of posts) {
-    routes.push(`${post.slug}`)
+    routes.push(`${post.path}`)
   }
   return routes
 }
@@ -118,7 +118,7 @@ export default {
 
   // Build configuration: https://content.nuxtjs.org/integrations#nuxtjssitemap
   sitemap: {
-    hostname: 'http://localhost:3000/',
+    hostname: 'https://crisanto.dev/',
     gzip: true,
     routes: createSitemapRoutes
   }

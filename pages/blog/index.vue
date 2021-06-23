@@ -1,21 +1,22 @@
 <template>
   <div class="blog">
-    <div class="sidebar-blog">
+    <div class="blog-sidebar">
 
     </div>
-    <div class="body-blog">
+    <div class="blog-body">
       <h1 @click="getBlog()">{{ title }}</h1>
-      <ul>
+      <ul class="list">
         <li 
           v-for="blog in blogs"
-          :key="blog.path">
+          :key="blog.path"
+          class="list-item">
           <nuxt-link :to="blog.path">
             {{ blog.title }}
           </nuxt-link>
         </li>
       </ul>
     </div>
-    <div class="sidebar-blog"></div>
+    <div class="blog-sidebar"></div>
   </div>
 </template>
 <script>

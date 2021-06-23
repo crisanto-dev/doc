@@ -1,0 +1,16 @@
+.coaching {
+  @apply my-12;
+  @apply flex;
+  @apply flex-wrap; 
+}
+
+.sidebar-coaching, .body-coaching {
+  @apply w-full;
+}
+
+.sidebar-coaching {
+  @apply lg:w-1/4;
+}
+.body-coaching {
+  @apply lg:w-2/4
+}

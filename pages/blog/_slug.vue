@@ -1,14 +1,14 @@
 <template>
   <div class="blog">
-    <div class="sidebar-blog"></div>
-    <div class="body-blog">
+    <div class="blog-sidebar"></div>
+    <div class="blog-body">
       <h1 >{{ blog.title }}</h1>
       <div class="body">
         <nuxt-content :document="blog"/>
       </div>
       <prev-next :prev="prev" :next="next" />
     </div>
-    <div class="sidebar-blog"></div>
+    <div class="blog-sidebar"></div>
   </div>
 </template>
 
@@ -16,13 +16,19 @@
 import Vue from 'vue'
 import AppCopyButton from '@/components/main/CopyButton'
 export default {
-  async asyncData({ $content, params }) {
-    const blog = await $content('blog', params.slug).fetch();
+  async asyncData({ $content, params, error }) {
+    const blog = await $content('blog', params.slug)
+      .fetch()
+      .catch((err) => {
+        console.log(err)
+        error({statusCode: 404, message: "Page not Found"})
+      });
     const [prev, next] = await $content('blog')
-                                .only(['title', 'path'])
-                                .sortBy('createdAt', 'asc')
-                                .surround(params.slug)
-                                .fetch()
+      .only(['title', 'path'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.slug)
+      .fetch()
+      
     return {
       blog,
       prev, 

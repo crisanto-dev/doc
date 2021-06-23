@@ -6,7 +6,7 @@ path: /tutorial
 createdAt: DateTime
 ---
 
-## This pages is contact me.
+## This pages is Tutorial.
 
 Here, it will have form contact.
 

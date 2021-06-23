@@ -1,6 +1,9 @@
 @import url('@/assets/css/background.css');
 @import url('@/assets/css/tag.css');
 @import url('@/assets/css/rounded.css');
+@import url('@/assets/css/coaching.css');
+@import url('@/assets/css/button.css');
+
 /* COLOR MODE */
 :root {
   --color: #243746;
@@ -55,11 +58,13 @@ h1 {
   @apply text-4xl;
   @apply lg:text-3xl;
   @apply pb-6;
+  @apply pt-6;
 }
 h2 {
   @apply text-3xl;
   @apply lg:text-2xl;
   @apply pb-6;
+  @apply pt-6;
 }
 h3 {
   @apply text-2xl;
@@ -98,7 +103,9 @@ p {
   @apply top-0;
   @apply z-30;
 }
-
+.navbar .burger {
+  @apply md:hidden;
+}
 .navbar-content {
   @apply w-full;
   @apply flex;
@@ -158,7 +165,7 @@ p {
 
 /* CONTENT */
 .content {
-  @apply mt-24;
+  @apply mt-14;
   @apply mb-12;
   @apply overflow-hidden;
 }
@@ -285,6 +292,11 @@ p {
   @apply p-3;
 }
 
+.section-footer {
+  @apply mt-12;
+  @apply flex;
+  @apply justify-center;
+}
 /* MARKDOWN */
 .nuxt-content-highlight {
   @apply -mx-16;
@@ -349,6 +361,7 @@ p {
 
 .profile {
   @apply -mt-6;
+  /* @apply pt-12; */
   /* @apply mb-24; */
   @apply relative;
   @apply shadow-inner;
@@ -356,14 +369,15 @@ p {
 
 .profile-background {
   @apply absolute;
-  @apply h-64;
+  @apply h-0;
+  @apply md:h-80;
   @apply w-full;
   @apply left-0;
   @apply right-0;
 }
 
 .profile-content {
-  @apply pt-12;
+  @apply pt-20;
   @apply pb-24;
 
   @apply flex;
@@ -376,21 +390,35 @@ p {
 }
 .profile-panel {
   @apply w-full;
-  @apply md:w-8/12;
+  /* @apply md:w-8/12; */
   @apply order-2;
   @apply lg:order-1;
   /* @apply lg:px-; */
-}
-.profile-sidebar {
-  @apply w-full;
-  @apply md:w-4/12;
-  @apply order-1;
-  @apply lg:order-2;
 }
 .profile-panel .panel .title {
   @apply md:px-3;
   @apply text-gray-700;
   @apply dark:text-gray-200;
+  @apply align-text-top;
+  @apply text-center;
+  @apply md:text-left;
+}
+.profile-image {
+  @apply flex;
+  @apply flex-wrap;
+  @apply items-start;
+  /* @apply justify-center; */
+}
+.profile-image .image{
+  @apply w-full;
+  @apply md:w-32;
+  @apply md:px-3;
+}
+.profile-image .image img {
+  @apply mx-auto;
+}
+.profile-content .projects {
+  @apply -mx-3;
 }
 
 /* PROJECT */
@@ -416,4 +444,34 @@ button.copy {
   /* @apply top-0; */
   @apply -mt-14;
   @apply p-3;
+}
+
+.article, .error, .exercise, .blog {
+  @apply flex;
+  @apply flex-wrap;
+  @apply mt-12;
+}
+
+.article-sidebar, .article-body, .error-sidebar, .error-body,
+.exercise-sidebar, .exercise-body, .blog-sidebar, .blog-body {
+  @apply w-full;
+}
+
+.article-sidebar, .error-sidebar, .exercise-sidebar,.blog-sidebar{
+  @apply lg:w-1/4;
+}
+.article-body, .error-body, .exercise-body, .blog-body{
+  @apply lg:w-2/4;
+}
+
+
+.list {
+
+}
+
+.list-item a{
+  @apply hover:opacity-90;
+  @apply block;
+  @apply px-3;
+  @apply py-2;
 }
