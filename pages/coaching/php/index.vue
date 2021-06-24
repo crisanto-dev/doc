@@ -17,10 +17,13 @@
 </template>
 <script>
 export default {
-  async asyncData({$content, params}) {
+  async asyncData({$content, params, i18n, error}) {
     const articles = await $content('coaching/php')
       .only(['title', 'path'])
       .fetch()
+      .catch(err => {
+        error({ statusCode: 404, message: "Page not Found"})
+      })
     return {
       articles
     }

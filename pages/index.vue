@@ -19,21 +19,20 @@
 
 <script>
 export default {
-  async asyncData({$content}) {
-    const blogs = await $content('blog').only(['title', 'description', 'path', 'createdAt'])
+  async asyncData({$content, error, i18n}) {
+    const blogs = await $content(i18n.locale + '/blog').only(['title','slug', 'description', 'path', 'createdAt'])
       .sortBy('createdAt', 'desc')
       .limit(6)
       .fetch()
       .catch(err => {
         error({ statusCode: 404, message: 'Page not found' })
       })
-    const projects = await $content('project')
+    const projects = await $content(i18n.locale + '/project')
       .only(['title', 'description', 'path', 'createdAt', 'tags'])
       .limit(6)
       .sortBy('createdAt', 'desc')
       .fetch()
-    
-    const coachs = await $content('coaching', {deep: true}).only(['title', 'path', 'description'])
+    const coachs = await $content(i18n.locale + '/coaching', {deep: true}).only(['title', 'path', 'description'])
       .sortBy('createdAt', 'desc')
       .limit(6)
       .fetch()

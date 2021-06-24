@@ -1,8 +1,8 @@
 ---
-title: Contact
-description: 'Contact'
-slug: contact
-path: /contact
+title: Privacy
+description: 'Privacy'
+slug: privacy
+path: /en/privacy
 createdAt: DateTime
 ---
 

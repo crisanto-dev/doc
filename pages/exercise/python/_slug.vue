@@ -14,8 +14,12 @@
 <script>
 export default {
   layout: 'blog',
-  async asyncData({$content, params}) {
-    const exercise = await $content('exercise/python', params.slug).fetch()
+  async asyncData({$content, params, i18n, error}) {
+    const exercise = await $content(i18n.locale + '/exercise/python', params.slug)
+      .fetch()
+      .catch(err => {
+        error({ statusCode: 404, message: "Page not Found"})
+      })
 
     return {
       exercise

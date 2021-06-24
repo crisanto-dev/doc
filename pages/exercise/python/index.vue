@@ -6,8 +6,12 @@
 
 <script>
 export default {
-  async asyncData({$content}) {
-    const exercises = await $content('exercise/python').fetch()
+  async asyncData({$content, i18n, error}) {
+    const exercises = await $content(i18n.locale + '/exercise/python')
+      .fetch()
+      .catch(err => {
+        error({ statusCode: 404, message: "Page not Found"})
+      })
 
     return {
       exercises

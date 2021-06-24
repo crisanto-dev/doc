@@ -8,3 +8,11 @@
   @apply lg:px-40;
   /* @apply -mb-12; */
 }
+
+.lang-color {
+  @apply text-black;
+}
+.lang-color select {
+  @apply border;
+  @apply text-black;
+}

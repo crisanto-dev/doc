@@ -13,8 +13,12 @@
 
 <script>
 export default {
-  async asyncData({$content, params}) {
-    const article = await $content('coaching/php', params.slug).fetch()
+  async asyncData({$content, params, i18n, error}) {
+    const article = await $content(i18n.locale + '/coaching/php', params.slug)
+      .fetch()
+      .catch(err => {
+        error({ statusCode: 404, message: this.$t('error.404')})
+      })
 
     return {
       article

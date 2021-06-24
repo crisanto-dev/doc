@@ -11,7 +11,7 @@
           class="item"
           @click="searchFind()">
           <nuxt-link 
-            :to="item.path"
+            :to="localePath(item.path.replace(/^(\/es)/, ''))"
             >{{ item.title }}</nuxt-link>
         </li>
       </ul>
@@ -42,8 +42,8 @@ export default {
         return
       }
 
-      this.items = await this.$content('', {deep:true})
-        .only(['title', 'path'])
+      this.items = await this.$content(this.$i18n.locale + '', {deep:true})
+        .only(['title', 'slug'])
         .sortBy('createdAt', 'asc')
         .limit(12)
         .search('title', search)

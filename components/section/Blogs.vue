@@ -9,13 +9,13 @@
           <CardsSimple 
             :title="blog.title"
             :description="blog.description"
-            :path="blog.path" />
+            :path="localePath(`/blog/${blog.slug}`)" />
       </div>
     </div>
     <div class="section-footer">
       <AppButton 
         value="Ver todos" 
-        path="/blog" 
+        :path="localePath(`/blog`)" 
         tag="a"/>
     </div>
   </div>

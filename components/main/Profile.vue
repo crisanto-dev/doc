@@ -11,7 +11,7 @@
             <h1 class="title">{{ name }}</h1>
           </div>
           
-          <h2 class="title">Projects</h2>
+          <h2 class="title">{{ $t('projects.text') }}</h2>
           <div class="projects">
             <slot />
           </div>

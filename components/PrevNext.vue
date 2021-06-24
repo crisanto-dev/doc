@@ -3,7 +3,7 @@
     <div class="prev">
       <nuxt-link 
         v-if="(prev != null)" 
-        :to="prev.path"
+        :to="localePath(`/blog/${prev.slug}`)"
         :alt="prev.title">
         <fa icon="arrow-left"  />
          {{ delimite(prev.title) }}
@@ -12,7 +12,7 @@
     <div class="next">
       <nuxt-link 
         v-if="(next != null)" 
-        :to="next.path"
+        :to="localePath(`/blog/${next.slug}`)"
         :alt="next.title">
         <!-- <fa-layers class="fa-2x"> -->
         <!-- </fa-layers> -->

@@ -23,7 +23,6 @@ export default {
   },
   computed: {
     tagg () {
-      console.log(this.tags)
       return this.tags.split(',')
     }
   }

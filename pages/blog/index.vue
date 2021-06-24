@@ -10,7 +10,7 @@
           v-for="blog in blogs"
           :key="blog.path"
           class="list-item">
-          <nuxt-link :to="blog.path">
+          <nuxt-link :to="`/blog/${blog.slug}`">
             {{ blog.title }}
           </nuxt-link>
         </li>
@@ -21,12 +21,14 @@
 </template>
 <script>
 export default {
-  async asyncData({$content}) {
-    const blogs = await $content('blog')
-                  .only(['title', 'path'])
-                  .sortBy('createdAt', 'asc')
-                  .fetch()
-    console.log(blogs)
+  async asyncData({$content, i18n, error}) {
+    const blogs = await $content(i18n.locale + '/blog')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .fetch()
+      .catch(err => {
+        error({ statusCode: 404, message: "Page not Found"})
+      })
     return {
       blogs
     }

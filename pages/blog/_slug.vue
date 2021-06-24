@@ -16,14 +16,14 @@
 import Vue from 'vue'
 import AppCopyButton from '@/components/main/CopyButton'
 export default {
-  async asyncData({ $content, params, error }) {
-    const blog = await $content('blog', params.slug)
+  async asyncData({ $content, params, error, i18n}) {
+
+    const blog = await $content(i18n.locale + '/blog', params.slug)
       .fetch()
       .catch((err) => {
-        console.log(err)
-        error({statusCode: 404, message: "Page not Found"})
+        error({statusCode: 404, message: "$t('error.404')"})
       });
-    const [prev, next] = await $content('blog')
+    const [prev, next] = await $content(i18n.locale + '/blog')
       .only(['title', 'path'])
       .sortBy('createdAt', 'asc')
       .surround(params.slug)

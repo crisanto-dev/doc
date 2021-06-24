@@ -2,7 +2,7 @@
 title: Tutorial
 description: 'Tutorial'
 slug: tutorial
-path: /tutorial
+path: /en/tutorial
 createdAt: DateTime
 ---
 

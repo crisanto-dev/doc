@@ -446,21 +446,23 @@ button.copy {
   @apply p-3;
 }
 
-.article, .error, .exercise, .blog {
+.article, .error, .exercise, .blog, .cb {
   @apply flex;
   @apply flex-wrap;
   @apply mt-12;
 }
 
 .article-sidebar, .article-body, .error-sidebar, .error-body,
-.exercise-sidebar, .exercise-body, .blog-sidebar, .blog-body {
+.exercise-sidebar, .exercise-body, .blog-sidebar, .blog-body,
+.cb-sidebar, .cb-body {
   @apply w-full;
 }
 
-.article-sidebar, .error-sidebar, .exercise-sidebar,.blog-sidebar{
+.article-sidebar, .error-sidebar, .exercise-sidebar,.blog-sidebar,
+.cb-sidebar{
   @apply lg:w-1/4;
 }
-.article-body, .error-body, .exercise-body, .blog-body{
+.article-body, .error-body, .exercise-body, .blog-body, .cb-body{
   @apply lg:w-2/4;
 }
 

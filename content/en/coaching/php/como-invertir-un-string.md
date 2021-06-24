@@ -2,7 +2,7 @@
 title: Como invertir un string
 description: 'En este entrenamiento vamo a aprender varias maneras de invertir un string.'
 slug: como-invertir-un-string
-path: /coaching/php/como-invertir-un-string
+path: /en/coaching/php/como-invertir-un-string
 createdAt: DateTime
 ---
 ## Metodo 1

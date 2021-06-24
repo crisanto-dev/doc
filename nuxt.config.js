@@ -78,8 +78,10 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-
-    '@nuxtjs/sitemap' // always push in the end of array
+    // always push in the end of array
+    '@nuxtjs/sitemap',
+    // https://i18n.nuxtjs.org/setup
+    'nuxt-i18n' 
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -121,6 +123,51 @@ export default {
     hostname: 'https://crisanto.dev/',
     gzip: true,
     routes: createSitemapRoutes
+  },
+
+  i18n: {
+    locales: [{
+      code: 'en',
+      iso: 'en-US',
+      file: 'en-US.js',
+      name: 'English'
+    }, {
+      code: 'es',
+      iso: 'es-EN',
+      file: 'es-ES.js',
+      name: 'Spanish'
+    }],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true,  // recommended
+    },
+    defaultLocale: 'es',
+    parsePages: false,
+    lazy: true,
+    seo: false,
+    langDir: 'i18n/',
+    vueI18n: {
+      fallbackLocale: 'en',
+      dateTimeFormats: {
+        en: {
+          long: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            weekday: 'short'
+          }
+        },
+        // fr: {
+        //   long: {
+        //     year: 'numeric',
+        //     month: 'long',
+        //     day: 'numeric',
+        //     weekday: 'short'
+        //   }
+        // }
+      }
+    }
   }
 
 }

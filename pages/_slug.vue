@@ -11,15 +11,12 @@
 
 <script>
 export default {
-  async asyncData({ $content, params , error}) {
-    
-    const article = await $content('', params.slug)
+  async asyncData({ $content, params , error, app, i18n}) {
+    const article = await $content(i18n.locale, params.slug)
       .fetch()
       .catch((err) => {
         error({ statusCode: 404, message: "Page not Found"})
       })
-    
-      console.log(article)
     return {
       article
     }
