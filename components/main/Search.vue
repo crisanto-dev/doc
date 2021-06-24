@@ -43,7 +43,7 @@ export default {
       }
 
       this.items = await this.$content(this.$i18n.locale + '', {deep:true})
-        .only(['title', 'slug'])
+        .only(['title', 'path'])
         .sortBy('createdAt', 'asc')
         .limit(12)
         .search('title', search)
