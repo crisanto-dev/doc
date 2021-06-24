@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{310:function(o,n,e){"use strict";e.r(n),n.default={projects:{text:"Projectos"},error:{404:"Pagina no encontrada"}}}}]);

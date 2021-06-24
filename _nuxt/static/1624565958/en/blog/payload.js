@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/en/blog", {data:[{blogs:[{slug:"php",title:"Php"},{slug:"javascript",title:"Javascript"},{slug:"python",title:"Python en ingles"}]}],fetch:{},mutations:void 0});
